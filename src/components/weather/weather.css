@@ -1,0 +1,121 @@
+.main-div {
+  display: flex;
+  margin-top: 5vh;
+  max-width: 90vw;
+  margin-left: 5vw;
+  justify-content: space-between;
+  align-items: center;
+  height: 75vh;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-image: url("../../../public/bg/summer.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.big-icons {
+  padding: 50px;
+  font-size: 8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10vh;
+  color: white;
+}
+
+.info-div {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 10vw;
+}
+
+.detail-div {
+  display: flex;
+  justify-content: space-between;
+  gap: 19vw;
+}
+
+.weather-details1 {
+  color: white;
+  margin-top: 17vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.weather-details2 {
+  color: white;
+  margin-top: 17vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.weather-description {
+  font-size: 2em;
+  color: #282c34;
+}
+
+.city-name {
+  font-size: 5em;
+  color: #282c34;
+}
+
+@media (max-width: 768px) {
+  .main-div {
+    background-image: url("../../../public/bg/mobile.jpg");
+    flex-direction: column;
+    height: auto;
+    justify-content: flex-start;
+  }
+  .big-icons {
+    padding: 20px;
+    font-size: 4em;
+    gap: 2vh;
+  }
+  .info-div {
+    padding: 20px;
+    margin-right: 0;
+    align-items: center;
+  }
+  .detail-div {
+    gap: 5vh;
+  }
+  .weather-details1 {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+  }
+  .weather-details2 {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+  }
+  .weather-description {
+    font-size: 1.5em;
+    color: white;
+  }
+  .city-name {
+    font-size: 3em;
+    color: white;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .info-div {
+    align-items: center;
+  }
+  .detail-div {
+    gap: 15vw;
+  }
+  .weather-details1 {
+    margin-top: 13vh;
+    width: 11vw;
+  }
+  .weather-details2 {
+    margin-top: 13vh;
+    width: 9vw;
+  }
+  .city-name {
+    font-size: 4em;
+  }
+}

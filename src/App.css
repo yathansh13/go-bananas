@@ -1,5 +1,8 @@
-.App {
-  text-align: center;
-  max-width: 90vw;
-  margin-left: 5vw;
+#root {
+  background-color: #fafafa;
+  height: 100vh;
+}
+
+p {
+  margin: 0;
 }

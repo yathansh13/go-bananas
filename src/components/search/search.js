@@ -1,6 +1,7 @@
 import { AsyncPaginate } from "react-select-async-paginate";
 import { useState } from "react";
 import { GEO_API_URL, geoDbOptions } from "../../api";
+import "./search.css";
 
 const Search = ({ onSearchChange }) => {
   // Destructure props here
@@ -13,11 +14,14 @@ const Search = ({ onSearchChange }) => {
 
   const loadOptions = (inputValue) => {
     return fetch(
-      `${GEO_API_URL}/cities?minPopulation=1000000  &namePrefix=${inputValue}`,
+      `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
       geoDbOptions
     )
       .then((res) => res.json())
+
       .then((res) => {
+        console.log(res);
+
         return {
           options: res.data.map((city) => ({
             value: `${city.latitude} ${city.longitude}`,
@@ -34,13 +38,15 @@ const Search = ({ onSearchChange }) => {
   };
 
   return (
-    <AsyncPaginate
-      placeholder="Search for your city"
-      value={search}
-      debounceTimeout={600}
-      onChange={handleOnChange}
-      loadOptions={loadOptions}
-    />
+    <div className="search-bar">
+      <AsyncPaginate
+        placeholder="Search for your city"
+        value={search}
+        debounceTimeout={600}
+        onChange={handleOnChange}
+        loadOptions={loadOptions}
+      />
+    </div>
   );
 };
 
